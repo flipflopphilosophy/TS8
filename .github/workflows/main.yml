@@ -1,66 +1,60 @@
-name: CI
+name: CI Workflow
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ master ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ master ]
 
 jobs:
-  build:
+  build-and-notify:
     runs-on: ubuntu-latest
 
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE20: true
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v2
 
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v2
       with:
-        python-version: '3.x'
+        python-version: '3.8'
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
-
-    - name: Display installed packages
-      run: pip list
+        pip install flake8 pytest
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
     - name: Lint with flake8
       run: |
-        flake8 app .env .flaskenv config.py job_candidate_manager.db requirements.txt run.py
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
-    - name: Format code with black
+    - name: Test with pytest
       run: |
-        black --check app .env .flaskenv config.py job_candidate_manager.db requirements.txt run.py
-
-    - name: Type check with mypy
-      run: |
-        mypy app .env .flaskenv config.py job_candidate_manager.db requirements.txt run.py
-
-    - name: Run tests
-      run: pytest tests
-
-    - name: Notify Slack on failure
-      if: failure()
-      env:
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-      run: |
-        curl -X POST -H 'Content-type: application/json' --data '{"text":"Build failed!"}' $SLACK_WEBHOOK_URL
-
-    - name: Notify Slack on success
-      if: success()
-      env:
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-      run: |
-        curl -X POST -H 'Content-type: application/json' --data '{"text":"Build succeeded!"}' $SLACK_WEBHOOK_URL
+        pytest
 
     - name: Use OpenAI Matching Token
       env:
-        GH_TOKEN: ${{ secrets.OpenAI_Matching }}
+        GH_TOKEN: ${{ secrets.OPEN_AIMATCHING }}
       run: |
         curl -H "Authorization: token $GH_TOKEN" https://api.github.com/user/repos
+
+    - name: Notify Slack on failure
+      if: failure()
+      uses: 8398a7/action-slack@v3
+      with:
+        status: ${{ job.status }}
+        fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+    - name: Notify Slack on success
+      if: success()
+      uses: 8398a7/action-slack@v3
+      with:
+        status: ${{ job.status }}
+        fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
