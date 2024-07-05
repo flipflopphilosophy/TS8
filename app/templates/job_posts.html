@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Job Posts Dashboard">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Posts Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header class="container">
+        <h1>Job Posts Dashboard</h1>
+    </header>
+    <main class="container">
+        <div class="filter-form mt-3">
+            <label for="filter-category" class="filter-label">Filter by Category:</label>
+            <select id="filter-category" class="form-control filter-select" aria-label="Filter by Category">
+                <option value="">All</option>
+                <option value="old">Old Job Posts</option>
+                <option value="new">New Job Posts</option>
+            </select>
+        </div>
+        <div class="filter-form mt-3">
+            <label for="start-date" class="filter-label">Start Date:</label>
+            <input type="date" id="start-date" class="form-control filter-input" aria-label="Start Date">
+        </div>
+        <div class="filter-form mt-3">
+            <label for="end-date" class="filter-label">End Date:</label>
+            <input type="date" id="end-date" class="form-control filter-input" aria-label="End Date">
+        </div>
+        <div class="filter-form mt-3">
+            <button id="filter-button" class="btn btn-primary filter-button">Filter</button>
+        </div>
+        <div class="record-count mt-3">Total Records: {{ jobs|length }}</div>
+        <div class="card mt-3">
+            <div class="card-body p-0">
+                <div class="table-responsive table-container">
+                    <form id="job-selection-form" method="POST" action="/model_training">
+                        <table class="table table-striped mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Select</th>
+                                    {% for column in [
+                                        'ID', 'Company Name', 'Role', 'Level', 'Salary', 'Salary Median', 'Location', 'State', 
+                                        'Setting', 'In-State?', 'Industry', 'Public', 'Employee Count', 'Revenue', 'Benefits', 
+                                        'Relocation', 'Undergraduate', 'Postgraduate', 'Experience', 'Fields', 'CPA', 
+                                        'Certifications', 'Strategic Responsibilities', 'Operational Responsibilities', 
+                                        'Team Management', 'Budgetary Control', 'Decision-Making Authority', 'Reporting Structure', 
+                                        'Cross-Functional Interaction', 'Company Culture', 'Technology Proficiency', 
+                                        'Stakeholder Engagement', 'Travel Requirements', 'Succession Planning', 'Crisis Management', 
+                                        'Leadership Style', 'Change Management', 'Risk Management', 'Job Posting Source', 
+                                        'Date Job Posted', 'Date Job Tracked', 'Works with Recruiters', 'Company Profile', 
+                                        'Soft Skills', 'Hard Skills', 'Job Description Summary', 'Other Requirements'
+                                    ] %}
+                                    <th class="resizable">{{ column }}</th>
+                                    {% endfor %}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for job in jobs %}
+                                <tr>
+                                    <td><input type="checkbox" name="job_id" value="{{ job[0] }}"></td>
+                                    {% for value in job %}
+                                    <td>{{ value | json_format }}</td>
+                                    {% endfor %}
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <button type="submit" class="btn btn-primary mt-3">Run Model Training</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}" defer></script>
+</body>
+</html>

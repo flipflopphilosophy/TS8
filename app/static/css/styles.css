@@ -1,0 +1,149 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    margin: 0 auto;
+    width: 95%;
+    max-width: 1200px;
+}
+
+header, main {
+    padding: 20px;
+}
+
+/* Table Styles */
+.table-container {
+    overflow-x: auto;
+    width: 100%;
+    height: 100%;
+}
+
+table {
+    width: 100%;
+    table-layout: auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    vertical-align: top;
+    text-align: left;
+    padding: 8px;
+    min-width: 200px;
+    max-width: 1000px;
+    overflow-wrap: break-word;
+    border: 1px solid #dee2e6;
+}
+
+th {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background: #0A7968;
+    color: white;
+    z-index: 1;
+}
+
+th.resizable {
+    position: relative;
+}
+
+th.resizable::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 5px;
+    cursor: col-resize;
+}
+
+.resizer {
+    display: inline-block;
+    width: 5px;
+    cursor: col-resize;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.filter-label {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.filter-input, .filter-select, .filter-button {
+    flex: 1;
+    min-width: 150px;
+    padding: 5px;
+    font-size: 0.9em;
+}
+
+.filter-button {
+    padding: 5px 10px;
+    font-size: 0.9em;
+    width: auto;
+    height: auto;
+}
+
+/* Grid Styles */
+.scrollable-container {
+    overflow-x: auto;
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    background-color: #f8f9fa;
+    margin-bottom: 20px;
+    white-space: nowrap;
+}
+
+.grid-container {
+    display: grid;
+    gap: 10px;
+}
+
+.job-grid {
+    grid-template-columns: repeat(21, minmax(200px, 1fr));
+}
+
+.candidate-grid {
+    grid-template-columns: repeat(13, minmax(200px, 1fr));
+}
+
+.grid-header {
+    font-weight: bold;
+    background-color: #e9ecef;
+    padding: 10px;
+    text-align: center;
+    white-space: normal;
+}
+
+.grid-item {
+    padding: 10px;
+    text-align: center;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+/* Feedback Box */
+.feedback-box {
+    width: 100%;
+    margin-top: 10px;
+}
