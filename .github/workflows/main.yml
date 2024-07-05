@@ -30,6 +30,9 @@ jobs:
     - name: Display installed packages
       run: pip list
 
+    - name: Debug Slack Webhook URL
+      run: echo "SLACK_WEBHOOK_URL=${{ secrets.SLACK_WEBHOOK_URL }}"
+
     - name: Lint with flake8
       run: |
         flake8 app .env .flaskenv config.py job_candidate_manager.db requirements.txt run.py
