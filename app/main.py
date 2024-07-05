@@ -28,7 +28,9 @@ def json_format(value):
 
 @main.app_context_processor
 def inject_json_format():
-    
+    # Assuming you want to make json_format available in all templates
+    return dict(json_format=json_format)
+
 
 def sanitize_json_string(json_string):
     # Remove any invalid control characters
