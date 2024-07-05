@@ -41,6 +41,15 @@ jobs:
       run: |
         curl -H "Authorization: token $GH_TOKEN" https://api.github.com/user/repos
 
+    - name: Log Slack Webhook URL existence
+      run: |
+        if [ -z "${{ secrets.SLACK_WEBHOOK_URL }}" ]; then
+          echo "SLACK_WEBHOOK_URL secret is not set."
+        else
+          echo "SLACK_WEBHOOK_URL secret is set."
+        fi
+      shell: bash
+
     - name: Notify Slack on failure
       if: failure()
       uses: 8398a7/action-slack@v3
