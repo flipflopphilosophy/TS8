@@ -21,7 +21,15 @@ load_dotenv()
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
 # Instantiate the OpenAI client at the module level
-client = OpenAI(api_key=OPENAI_API_KEY)
+client = openai.Client(api_key=OPENAI_API_KEY)
+
+def answer_question(question):
+    response = client.Completion.create(
+      engine="gpt-4o",  # Updated to use GPT-4o engine
+      prompt=question,
+      max_tokens=50
+    )
+    return response.choices[0].text.strip()
 
 def json_format(value):
     return json.dumps(value, indent=2)
