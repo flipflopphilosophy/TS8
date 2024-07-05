@@ -31,7 +31,6 @@ def inject_json_format():
     # Assuming you want to make json_format available in all templates
     return dict(json_format=json_format)
 
-
 def sanitize_json_string(json_string):
     # Remove any invalid control characters
     sanitized_string = re.sub(r'[\x00-\x1f\x7f]', '', json_string)
@@ -42,14 +41,13 @@ def extract_info(submission_type, submission_text):
     extracted_data = []
 
     for submission in submissions:
-        
-    print(f"Type of extracted_data in extract_info: {type(extracted_data)}")
-    if isinstance(extracted_data, list):
-        print("extracted_data is a list in extract_info.")
-    elif isinstance(extracted_data, dict):
-        print("extracted_data is a dictionary in extract_info.")
-    else:
-        print("extracted_data is neither a list nor a dictionary in extract_info.")
+        print(f"Type of extracted_data in extract_info: {type(extracted_data)}")
+        if isinstance(extracted_data, list):
+            print("extracted_data is a list in extract_info.")
+        elif isinstance(extracted_data, dict):
+            print("extracted_data is a dictionary in extract_info.")
+        else:
+            print("extracted_data is neither a list nor a dictionary in extract_info.")
     return extracted_data
 
 # Function to fetch all existing IDs from the database
@@ -63,9 +61,9 @@ def fetch_existing_ids():
         existing_ids = {row[0] for row in cursor.fetchall()}
     finally:
         if cursor:
-            
+            cursor.close()
         if conn:
-            
+            conn.close()
     return existing_ids
 
 def process_submissions(submission_text, process_function, submission_type):
@@ -77,9 +75,9 @@ def process_submissions(submission_text, process_function, submission_type):
 
     for submission in submissions:
         try:
-            
+            pass
         except Exception as e:
-            
+            pass
     return extracted_data
 
 def extract_data_from_submission(submission, process_function):
@@ -104,43 +102,6 @@ def extract_data_from_submission(submission, process_function):
             logging.info(f"Raw API response: {raw_response}")  # Log raw API response
             break  # If the request is successful, break out of the loop
         except OpenAI.error.RateLimitError as e:
-            wait_time = 2 ** attempt  # Exponential backoff
-            logging.error(f"Rate limit exceeded. Retrying in {wait_time} seconds. Error: {e}")
-            time.sleep(wait_time)
-        except Exception as e:
-            logging.error(f"Error during processing submission: {e}")
-            return None
-    else:
-        logging.error("Exceeded maximum retry attempts due to rate limiting.")
-        return None
-
-    if not response.choices or not response.choices[0].message or not response.choices[0].message.content:
-        logging.error('Invalid response from OpenAI!')
-        return None
-
-    extracted_info = raw_response.strip()
-    logging.info(f"Extracted info: {extracted_info}")
-
-    # Sanitize the extracted info
-    sanitized_info = sanitize_json_string(extracted_info)
-    logging.info(f"Sanitized info: {sanitized_info}")
-
-    logging.info("Calling validate_and_clean_json")
-    cleaned_json = validate_and_clean_json(sanitized_info)
-    logging.info(f"validate_and_clean_json returned: {cleaned_json}")
-    return cleaned_json
-
-def generate_prompt(submission, process_function):
-    if process_function == process_job_post:
-        
-    elif process_function == process_candidate_profile:": prompt}
-                ]
-            )
-            logging.info("OpenAI API call successful")
-            raw_response = response.choices[0].message.content
-            logging.info(f"Raw API response: {raw_response}")  # Log raw API response
-            break  # If the request is successful, break out of the loop
-        except openai.error.RateLimitError as e:
             wait_time = 2 ** attempt  # Exponential backoff
             logging.error(f"Rate limit exceeded. Retrying in {wait_time} seconds. Error: {e}")
             time.sleep(wait_time)
@@ -257,11 +218,11 @@ def generate_prompt(submission, process_function):
                 "Tax Specialization": "Analyze entire profile and determine areas of tax specialization.",
                 "Links to Blog Posts": "Extract links to any blog posts written by the candidate.",
                 "Articles": "Extract titles and links to any articles written by the candidate.",
-                "CPA": Extract whether the candidate is a CPA. "Y" if they are, "NA" if they aren't or it isn not mentioned.",
+                "CPA": "Extract whether the candidate is a CPA. 'Y' if they are, 'NA' if they aren't or it isn not mentioned.",
                 "Certifications": "Extract details of any certifications the candidate holds.",
                 "Professional Associations": "Extract professional associations.",
                 "Tax Software Experience": "Extract experience with tax software.",
-                "Indsutry Experience": Extract industries the candidate has experience in. You can infer this from the companies they have worked for or explicit description in profile.",
+                "Industry Experience": "Extract industries the candidate has experience in. You can infer this from the companies they have worked for or explicit description in profile.",
                 "Languages": "Extract languages spoken",
                 "Experience": "Extract years of experience in tax roles (example: 3 years experience in property tax, 5 years experience in international tax, etc.)",
             }}
@@ -684,5 +645,3 @@ def save_candidate_profiles_to_db(candidate_profiles):
             cursor.close()
         if conn:
             conn.close()
-
-
