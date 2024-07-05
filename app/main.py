@@ -22,7 +22,7 @@ load_dotenv()
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
 # Instantiate the OpenAI client at the module level
-client = openai.Client(api_key=OPENAI_API_KEY)
+client = OpenAI.Client(api_key=OPENAI_API_KEY)
 
 def answer_question(question):
     response = client.Completion.create(
