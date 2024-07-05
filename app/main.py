@@ -7,6 +7,7 @@ from datetime import datetime
 import os
 from dotenv import load_dotenv
 import openai
+from openai.error import RateLimitError
 import time
 import re
 
@@ -253,10 +254,12 @@ def validate_and_clean_json(extracted_info):
             logging.info("Extracted info is a valid list")
             for item in extracted_info_data:
                 logging.info(f"Item type: {type(item)}, Item content: {item}")
+            logging.info(f"Final output of validate_and_clean_json: {extracted_info_data}")
             return extracted_info_data
         elif isinstance(extracted_info_data, dict):
             logging.info("Extracted info is a valid dict")
             logging.info(f"Dict content: {extracted_info_data}")
+            logging.info(f"Final output of validate_and_clean_json: {extracted_info_data}")
             return [extracted_info_data]
         else:
             logging.error("Extracted info is neither a list nor a dict")
@@ -265,8 +268,6 @@ def validate_and_clean_json(extracted_info):
         logging.error(f"Error decoding JSON at line {e.lineno} column {e.colno}: {e.msg}")
         logging.error(f"Raw API response: {extracted_info}")
         return None
-
-    logging.info(f"Final output of validate_and_clean_json: {extracted_info_data}")
 
 def process_job_post(extracted_info):
     logger.info(f"Processing extracted info: {extracted_info}")
