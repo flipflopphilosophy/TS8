@@ -6,7 +6,7 @@ import json
 from datetime import datetime
 import os
 from dotenv import load_dotenv
-import openai
+import openai as OpenAI
 from openai.error import RateLimitError
 import time
 import re
