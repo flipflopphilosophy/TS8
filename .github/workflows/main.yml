@@ -30,9 +30,6 @@ jobs:
     - name: Display installed packages
       run: pip list
 
-    - name: Debug Slack Webhook URL
-      run: echo "SLACK_WEBHOOK_URL=${{ secrets.SLACK_WEBHOOK_URL }}"
-
     - name: Lint with flake8
       run: |
         flake8 app .env .flaskenv config.py job_candidate_manager.db requirements.txt run.py
@@ -50,10 +47,20 @@ jobs:
 
     - name: Notify Slack on failure
       if: failure()
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       run: |
-        curl -X POST -H 'Content-type: application/json' --data '{"text":"Build failed!"}' ${{ secrets.SLACK_WEBHOOK_URL }}
+        curl -X POST -H 'Content-type: application/json' --data '{"text":"Build failed!"}' $SLACK_WEBHOOK_URL
 
     - name: Notify Slack on success
       if: success()
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       run: |
-        curl -X POST -H 'Content-type: application/json' --data '{"text":"Build succeeded!"}' ${{ secrets.SLACK_WEBHOOK_URL }}
+        curl -X POST -H 'Content-type: application/json' --data '{"text":"Build succeeded!"}' $SLACK_WEBHOOK_URL
+
+    - name: Use OpenAI Matching Token
+      env:
+        GH_TOKEN: ${{ secrets.OpenAI_Matching }}
+      run: |
+        curl -H "Authorization: token $GH_TOKEN" https://api.github.com/user/repos
