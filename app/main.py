@@ -6,7 +6,7 @@ import json
 from datetime import datetime
 import os
 from dotenv import load_dotenv
-from openai import OpenAI
+import openai
 import time
 import re
 
@@ -28,7 +28,7 @@ def json_format(value):
 
 @main.app_context_processor
 def inject_json_format():
-    return dict(json_format=json_format)
+    
 
 def sanitize_json_string(json_string):
     # Remove any invalid control characters
@@ -40,10 +40,7 @@ def extract_info(submission_type, submission_text):
     extracted_data = []
 
     for submission in submissions:
-        if submission_type == 'candidateProfile':
-            processed_data = process_candidate_profile(submission)
-            if processed_data:
-                extracted_data.extend(processed_data)  # Use extend instead of append
+        
     print(f"Type of extracted_data in extract_info: {type(extracted_data)}")
     if isinstance(extracted_data, list):
         print("extracted_data is a list in extract_info.")
@@ -64,9 +61,9 @@ def fetch_existing_ids():
         existing_ids = {row[0] for row in cursor.fetchall()}
     finally:
         if cursor:
-            cursor.close()
+            
         if conn:
-            conn.close()
+            
     return existing_ids
 
 def process_submissions(submission_text, process_function, submission_type):
@@ -78,32 +75,9 @@ def process_submissions(submission_text, process_function, submission_type):
 
     for submission in submissions:
         try:
-            extracted_info_list = extract_data_from_submission(submission, process_function)
-            if extracted_info_list:
-                for info in extracted_info_list:
-                    try:
-                        processed_info = process_function(info)
-                        
-                        # Generate unique ID
-                        new_id = str(uuid.uuid4())
-                        if submission_type == 'oldJob':
-                            new_id = 'OLD' + new_id
-                        while new_id in existing_ids:
-                            new_id = str(uuid.uuid4())
-                            if submission_type == 'oldJob':
-                                new_id = 'OLD' + new_id
-                        processed_info['id'] = new_id
-
-                        existing_ids.add(processed_info['id'])
-                        
-                        if submission_type in ['jobPost', 'oldJob', 'job']:
-                            processed_info['date_job_tracked'] = datetime.now().strftime('%Y-%m-%d')
-                        extracted_data.append(processed_info)
-                    except Exception as e:
-                        logger.error(f"Error processing individual extracted info: {e}")
+            
         except Exception as e:
-            logger.error(f"Error during processing submission: {e}")
-            continue
+            
     return extracted_data
 
 def extract_data_from_submission(submission, process_function):
@@ -121,6 +95,43 @@ def extract_data_from_submission(submission, process_function):
                 messages=[
                     {"role": "system", "content": "You are a highly skilled information extractor."},
                     {"role": "user", "content": prompt}
+                ]
+            )
+            logging.info("OpenAI API call successful")
+            raw_response = response.choices[0].message.content
+            logging.info(f"Raw API response: {raw_response}")  # Log raw API response
+            break  # If the request is successful, break out of the loop
+        except OpenAI.error.RateLimitError as e:
+            wait_time = 2 ** attempt  # Exponential backoff
+            logging.error(f"Rate limit exceeded. Retrying in {wait_time} seconds. Error: {e}")
+            time.sleep(wait_time)
+        except Exception as e:
+            logging.error(f"Error during processing submission: {e}")
+            return None
+    else:
+        logging.error("Exceeded maximum retry attempts due to rate limiting.")
+        return None
+
+    if not response.choices or not response.choices[0].message or not response.choices[0].message.content:
+        logging.error('Invalid response from OpenAI!')
+        return None
+
+    extracted_info = raw_response.strip()
+    logging.info(f"Extracted info: {extracted_info}")
+
+    # Sanitize the extracted info
+    sanitized_info = sanitize_json_string(extracted_info)
+    logging.info(f"Sanitized info: {sanitized_info}")
+
+    logging.info("Calling validate_and_clean_json")
+    cleaned_json = validate_and_clean_json(sanitized_info)
+    logging.info(f"validate_and_clean_json returned: {cleaned_json}")
+    return cleaned_json
+
+def generate_prompt(submission, process_function):
+    if process_function == process_job_post:
+        
+    elif process_function == process_candidate_profile:": prompt}
                 ]
             )
             logging.info("OpenAI API call successful")
