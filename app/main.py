@@ -45,17 +45,32 @@ def sanitize_json_string(json_string):
     return sanitized_string
 
 def extract_info(submission_type, submission_text):
-    submissions = submission_text.split('#DF')
-    extracted_data = []
+    logging.basicConfig(level=logging.DEBUG)
+    logging.info(f"Starting extract_info for submission_type: {submission_type}")
 
-    for submission in submissions:
-        print(f"Type of extracted_data in extract_info: {type(extracted_data)}")
+    try:
+        submissions = submission_text.split('#DF')
+        extracted_data = []
+
+        for submission in submissions:
+            logging.debug(f"Processing submission: {submission[:50]}...")  # Log first 50 chars for brevity
+            # Assuming some processing here that fills extracted_data
+            # For demonstration, we'll just append the submission
+            extracted_data.append(submission)
+
+        logging.info(f"Type of extracted_data in extract_info: {type(extracted_data)}")
         if isinstance(extracted_data, list):
-            print("extracted_data is a list in extract_info.")
+            logging.info("extracted_data is a list in extract_info.")
         elif isinstance(extracted_data, dict):
-            print("extracted_data is a dictionary in extract_info.")
+            logging.info("extracted_data is a dictionary in extract_info.")
         else:
-            print("extracted_data is neither a list nor a dictionary in extract_info.")
+            logging.info("extracted_data is neither a list nor a dictionary in extract_info.")
+
+        logging.info(f"Final extracted_data contains {len(extracted_data)} items.")
+    except Exception as e:
+        logging.error(f"Error in extract_info: {e}")
+        raise  # Re-raise the exception after logging
+
     return extracted_data
 
 # Function to fetch all existing IDs from the database
@@ -94,6 +109,8 @@ def extract_data_from_submission(submission, process_function):
     logging.info(f"Generated prompt: {prompt}")
 
     retry_attempts = 5
+    logging.info(f"Configured to make up to {retry_attempts} retry attempts if necessary")
+
     for attempt in range(retry_attempts):
         logging.info(f"Attempt {attempt + 1} of {retry_attempts}")
         try:
@@ -107,10 +124,10 @@ def extract_data_from_submission(submission, process_function):
             )
             logging.info("OpenAI API call successful")
             raw_response = response.choices[0].message.content
-            logging.info(f"Raw API response: {raw_response}")  # Log raw API response
-            break  # If the request is successful, break out of the loop
+            logging.info(f"Raw API response: {raw_response}")
+            break
         except OpenAI.error.RateLimitError as e:
-            wait_time = 2 ** attempt  # Exponential backoff
+            wait_time = 2 ** attempt
             logging.error(f"Rate limit exceeded. Retrying in {wait_time} seconds. Error: {e}")
             time.sleep(wait_time)
         except Exception as e:
@@ -127,13 +144,15 @@ def extract_data_from_submission(submission, process_function):
     extracted_info = raw_response.strip()
     logging.info(f"Extracted info: {extracted_info}")
 
-    # Sanitize the extracted info
+    logging.info("Sanitizing the extracted info")
     sanitized_info = sanitize_json_string(extracted_info)
     logging.info(f"Sanitized info: {sanitized_info}")
 
-    logging.info("Calling validate_and_clean_json")
+    logging.info("Validating and cleaning the sanitized info")
     cleaned_json = validate_and_clean_json(sanitized_info)
     logging.info(f"validate_and_clean_json returned: {cleaned_json}")
+
+    logging.info("Successfully extracted and processed candidate information")
     return cleaned_json
 
 def generate_prompt(submission, process_function):
@@ -243,12 +262,13 @@ def validate_and_clean_json(extracted_info):
     logging.info(f"Validating and cleaning JSON: {extracted_info}")
     try:
         if extracted_info.startswith("```json"):
+            logging.info("Attempting to remove ```json formatting from extracted info")
             extracted_info = extracted_info[7:-4].strip()
             logging.info("Removed ```json formatting from extracted info")
 
         extracted_info_data = json.loads(extracted_info)
-        
-        # Check if the extracted info is a list or a single object
+        logging.info("Successfully decoded JSON")
+
         if isinstance(extracted_info_data, list):
             logging.info("Extracted info is a valid list")
             for item in extracted_info_data:
@@ -261,10 +281,11 @@ def validate_and_clean_json(extracted_info):
             logging.info(f"Final output of validate_and_clean_json: {extracted_info_data}")
             return [extracted_info_data]
         else:
-            logging.error("Extracted info is neither a list nor a dict")
+            logging.error("Extracted info is neither a list nor a dict. Unable to process.")
             return None
     except json.JSONDecodeError as e:
         logging.error(f"Error decoding JSON at line {e.lineno} column {e.colno}: {e.msg}")
+        logging.error("Failed to decode JSON. Review the raw API response for issues.")
         logging.error(f"Raw API response: {extracted_info}")
         return None
 
@@ -328,15 +349,15 @@ def process_job_post(extracted_info):
         return {}
 
 def process_candidate_profile(submission_text):
-    logging.info(f"Processing candidate profile: {submission_text[:100]}...")
+    logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+    logging.info("Starting process_candidate_profile")
 
     try:
-        logging.info("Calling extract_data_from_submission")
-        extracted_info_list = extract_data_from_submission(submission_text, process_candidate_profile)
-        logging.info(f"extract_data_from_submission returned: {extracted_info_list}")
-
+        logging.debug(f"Submission text received: {submission_text[:100]}...")
+        logging.info("Extracting data from submission")
+        extracted_info_list = extract_data_from_submission(submission_text)
         if not extracted_info_list:
-            logging.error("No data extracted")
+            logging.warning("No data extracted from submission")
             return None
 
         candidate_data = []
@@ -579,13 +600,13 @@ def save_job_posts_to_db(job_posts):
     conn.close()
 
 def save_candidate_profiles_to_db(candidate_profiles):
-    print(f"Type of candidate_profiles in save_candidate_profiles_to_db: {type(candidate_profiles)}")
+    logging.info(f"Type of candidate_profiles in save_candidate_profiles_to_db: {type(candidate_profiles)}")
     if isinstance(candidate_profiles, list):
-        print("candidate_profiles is a list in save_candidate_profiles_to_db.")
+        logging.info("candidate_profiles is a list in save_candidate_profiles_to_db.")
     elif isinstance(candidate_profiles, dict):
-        print("candidate_profiles is a dictionary in save_candidate_profiles_to_db.")
+        logging.info("candidate_profiles is a dictionary in save_candidate_profiles_to_db.")
     else:
-        print("candidate_profiles is neither a list nor a dictionary in save_candidate_profiles_to_db.")
+        logging.warning("candidate_profiles is neither a list nor a dictionary in save_candidate_profiles_to_db.")
 
     conn = None
     cursor = None
@@ -648,6 +669,8 @@ def save_candidate_profiles_to_db(candidate_profiles):
                 logging.error(f"Expected dictionary but got {type(candidate_dict)}")
         conn.commit()
         logging.info("Candidate profiles saved successfully")
+    except Exception as e:
+        logging.error(f"Failed to save candidate profiles to DB: {e}")
     finally:
         if cursor:
             cursor.close()
