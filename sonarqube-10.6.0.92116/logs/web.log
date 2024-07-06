@@ -1,0 +1,512 @@
+2024.07.06 12:11:24 INFO  web[][o.s.p.ProcessEntryPoint] Starting Web Server
+2024.07.06 12:11:24 INFO  web[][o.s.s.a.TomcatHttpConnectorFactory] Starting Tomcat on port 9000
+2024.07.06 12:11:25 INFO  web[][o.s.s.p.LogServerVersion] SonarQube Server / 10.6.0.92116 / 832b6f0491b9d7775943b0e7fcc09ef936d23007
+2024.07.06 12:11:25 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Starting embedded database on port 9092 with url jdbc:h2:tcp://127.0.0.1:9092/sonar;NON_KEYWORDS=VALUE
+2024.07.06 12:11:25 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Embedded database started. Data stored in: /Users/sam/Desktop/TS8/sonarqube-10.6.0.92116/data
+2024.07.06 12:11:25 INFO  web[][o.s.d.DefaultDatabase] Create JDBC data source for jdbc:h2:tcp://127.0.0.1:9092/sonar;NON_KEYWORDS=VALUE
+2024.07.06 12:11:25 INFO  web[][c.z.h.HikariDataSource] HikariPool-1 - Starting...
+2024.07.06 12:11:25 INFO  web[][c.z.h.p.HikariPool] HikariPool-1 - Added connection conn2: url=jdbc:h2:tcp://127.0.0.1:9092/sonar user=
+2024.07.06 12:11:25 INFO  web[][c.z.h.HikariDataSource] HikariPool-1 - Start completed.
+2024.07.06 12:11:25 WARN  web[][o.s.db.dialect.H2] H2 database should be used for evaluation purpose only.
+2024.07.06 12:11:26 INFO  web[][o.s.s.p.ServerFileSystemImpl] SonarQube home: /Users/sam/Desktop/TS8/sonarqube-10.6.0.92116
+2024.07.06 12:11:26 INFO  web[][o.s.s.u.SystemPasscodeImpl] System authentication by passcode is disabled
+2024.07.06 12:11:26 INFO  web[][o.s.s.p.d.m.h.MigrationHistoryTableImpl] Creating table schema_migrations
+2024.07.06 12:11:26 INFO  web[][o.s.s.p.ServerPluginManager] Deploy C# Code Quality and Security / 9.27.0.93347 / f6dd2dc674ed47c3c3b2d54f0dbb1f1e2010ac73
+2024.07.06 12:11:26 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Clean as You Code / 2.3.0.1782 / 1db4e32c08cf9d0b999498e7ba4fd5849583dfdd
+2024.07.06 12:11:26 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Flex Code Quality and Security / 2.12.0.4568 / e8b2821a05db57b79b8ae85e3db1571f5b744273
+2024.07.06 12:11:26 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Go Code Quality and Security / 1.15.0.4655 / 28938525c4093d5e9fa4e858535bbcb60af7f066
+2024.07.06 12:11:26 INFO  web[][o.s.s.p.ServerPluginManager] Deploy HTML Code Quality and Security / 3.16.0.5274 / 423029a90fcbbd65b86d3b4e9c3e4bc686449a75
+2024.07.06 12:11:26 INFO  web[][o.s.s.p.ServerPluginManager] Deploy IaC Code Quality and Security / 1.31.0.10579 / null
+2024.07.06 12:11:26 INFO  web[][o.s.s.p.ServerPluginManager] Deploy JaCoCo / 1.3.0.1538 / 74a7798c7cea687c72ed9df40c93eb7ea2a58c49
+2024.07.06 12:11:26 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Java Advanced Code Quality Analyzer / 8.0.1.36337 / 06cf4ed6298da3ae634677c5eff8bba46f2498a5
+2024.07.06 12:11:26 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Java Code Quality and Security / 8.0.1.36337 / 06cf4ed6298da3ae634677c5eff8bba46f2498a5
+2024.07.06 12:11:26 INFO  web[][o.s.s.p.ServerPluginManager] Deploy JavaScript/TypeScript/CSS Code Quality and Security / 10.14.0.26080 / 1ac0884e4f4afdd4a46add2f1208ee832dc43c87
+2024.07.06 12:11:26 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Kotlin Code Quality and Security / 2.20.0.4382 / eb22cc4ed915de84e358135dd3f2ea2080de1441
+2024.07.06 12:11:26 INFO  web[][o.s.s.p.ServerPluginManager] Deploy PHP Code Quality and Security / 3.36.0.11813 / 5b885f10c336e98e29f269308a4975487b7bdb3b
+2024.07.06 12:11:26 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Python Code Quality and Security / 4.19.0.15616 / b456a29c1c3b9af03aa6262b6f8264e5a12d019f
+2024.07.06 12:11:26 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Ruby Code Quality and Security / 1.15.0.4655 / 28938525c4093d5e9fa4e858535bbcb60af7f066
+2024.07.06 12:11:26 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Scala Code Quality and Security / 1.15.0.4655 / 28938525c4093d5e9fa4e858535bbcb60af7f066
+2024.07.06 12:11:26 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Text Code Quality and Security / 2.12.1.2905 / null
+2024.07.06 12:11:26 INFO  web[][o.s.s.p.ServerPluginManager] Deploy VB.NET Code Quality and Security / 9.27.0.93347 / f6dd2dc674ed47c3c3b2d54f0dbb1f1e2010ac73
+2024.07.06 12:11:26 INFO  web[][o.s.s.p.ServerPluginManager] Deploy XML Code Quality and Security / 2.10.0.4108 / 34b16ba369117f6befc0b1e0866a069a80f6db2e
+2024.07.06 12:11:29 INFO  web[][o.s.s.e.EsClientProvider] Connected to local Elasticsearch: [http://localhost:9001]
+2024.07.06 12:11:29 WARN  web[][o.s.a.s.w.WebService$Action] Description is not set on action api/monitoring/metrics
+2024.07.06 12:11:29 WARN  web[][o.s.a.s.w.WebService$Action] Since is not set on action api/monitoring/metrics
+2024.07.06 12:11:29 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/monitoring/metrics
+2024.07.06 12:11:29 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/system/liveness
+2024.07.06 12:11:29 INFO  web[][o.s.s.p.d.m.AutoDbMigration] Automatically perform DB migration on fresh install
+2024.07.06 12:11:29 INFO  web[][DbMigrations] Executing 132 DB migrations...
+2024.07.06 12:11:29 INFO  web[][DbMigrations] 1/132 #1 'Create initial schema'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 1/132 #1 'Create initial schema': success | time=524ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 2/132 #2 'Populate initial schema'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 2/132 #2 'Populate initial schema': success | time=32ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 3/132 #100000 'Remove orphan rules in Quality Profiles'...
+2024.07.06 12:11:30 INFO  web[][o.s.s.p.d.m.s.MassUpdate] 0 rows processed (0 items/sec)
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 3/132 #100000 'Remove orphan rules in Quality Profiles': success | time=14ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 4/132 #100001 'Drop index 'projects_module_uuid' in the 'Components' table'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 4/132 #100001 'Drop index 'projects_module_uuid' in the 'Components' table': success | time=8ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 5/132 #100002 'Drop column 'module_uuid' in the 'Components' table'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 5/132 #100002 'Drop column 'module_uuid' in the 'Components' table': success | time=23ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 6/132 #100003 'Drop column 'module_uuid_path' in the 'Components' table'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 6/132 #100003 'Drop column 'module_uuid_path' in the 'Components' table': success | time=14ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 7/132 #100004 'Drop column 'b_module_uuid' in the 'Components' table'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 7/132 #100004 'Drop column 'b_module_uuid' in the 'Components' table': success | time=14ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 8/132 #100005 'Drop column 'b_module_uuid_path' in the 'Components' table'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 8/132 #100005 'Drop column 'b_module_uuid_path' in the 'Components' table': success | time=12ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 9/132 #100006 'Drop index 'projects_root_uuid' in the 'Components' table'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 9/132 #100006 'Drop index 'projects_root_uuid' in the 'Components' table': success | time=5ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 10/132 #100007 'Drop column 'root_uuid' in the 'Components' table'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 10/132 #100007 'Drop column 'root_uuid' in the 'Components' table': success | time=14ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 11/132 #100008 'Update value of 'user_local' in the 'users' table'...
+2024.07.06 12:11:30 INFO  web[][o.s.s.p.d.m.s.MassUpdate] 0 rows processed (0 items/sec)
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 11/132 #100008 'Update value of 'user_local' in the 'users' table': success | time=12ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 12/132 #100009 'Make column 'user_local' not nullable in the 'users' table'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 12/132 #100009 'Make column 'user_local' not nullable in the 'users' table': success | time=15ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 13/132 #100010 'Create 'scim_groups' table'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 13/132 #100010 'Create 'scim_groups' table': success | time=4ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 14/132 #100011 'Create unique index on scim_groups.group_uuid'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 14/132 #100011 'Create unique index on scim_groups.group_uuid': success | time=5ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 15/132 #100012 'Log a warning message if 'sonar.scim.enabled' is used'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 15/132 #100012 'Log a warning message if 'sonar.scim.enabled' is used': success | time=5ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 16/132 #100013 'Drop 'sonar.scim.enabled' property'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 16/132 #100013 'Drop 'sonar.scim.enabled' property': success | time=5ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 17/132 #100014 'Drop any SCIM User provisioning, turning all users local'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 17/132 #100014 'Drop any SCIM User provisioning, turning all users local': success | time=4ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 18/132 #100015 'Add ncloc to 'Projects' table'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 18/132 #100015 'Add ncloc to 'Projects' table': success | time=9ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 19/132 #100016 'Populate ncloc in 'Projects' table'...
+2024.07.06 12:11:30 INFO  web[][o.s.s.p.d.m.s.MassUpdate] 0 rows processed (0 items/sec)
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 19/132 #100016 'Populate ncloc in 'Projects' table': success | time=7ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 20/132 #101000 'Add 'scm_accounts' table'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 20/132 #101000 'Add 'scm_accounts' table': success | time=6ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 21/132 #101001 'Migrate scm accounts from 'users' to 'scm_accounts' table'...
+2024.07.06 12:11:30 INFO  web[][o.s.s.p.d.m.s.MassRowSplitter] 1 rows processed (0 items/sec)
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 21/132 #101001 'Migrate scm accounts from 'users' to 'scm_accounts' table': success | time=9ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 22/132 #101002 'Add index on 'scm_accounts.scm_account''...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 22/132 #101002 'Add index on 'scm_accounts.scm_account'': success | time=6ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 23/132 #101003 'Add index on 'users.email''...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 23/132 #101003 'Add index on 'users.email'': success | time=5ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 24/132 #101004 'Drop 'scm_accounts' column in 'users' table'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 24/132 #101004 'Drop 'scm_accounts' column in 'users' table': success | time=11ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 25/132 #101005 'Add column 'is_main' to 'project_branches' table'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 25/132 #101005 'Add column 'is_main' to 'project_branches' table': success | time=8ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 26/132 #101006 'Update value of 'is_main' in 'project_branches' table'...
+2024.07.06 12:11:30 INFO  web[][o.s.s.p.d.m.s.MassUpdate] 0 rows processed (0 items/sec)
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 26/132 #101006 'Update value of 'is_main' in 'project_branches' table': success | time=8ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 27/132 #101007 'Alter column 'is_main' in 'project_branches' table - make it not nullable'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 27/132 #101007 'Alter column 'is_main' in 'project_branches' table - make it not nullable': success | time=6ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 28/132 #101008 'Increase size of 'internal_properties.kee' from 20 to 40 characters'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 28/132 #101008 'Increase size of 'internal_properties.kee' from 20 to 40 characters': success | time=8ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 29/132 #101009 'Create column 'project_uuid' in 'user_tokens'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 29/132 #101009 'Create column 'project_uuid' in 'user_tokens': success | time=8ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 30/132 #101010 'Remove user tokens linked to unexistent project'...
+2024.07.06 12:11:30 INFO  web[][o.s.s.p.d.m.s.MassUpdate] 0 rows processed (0 items/sec)
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 30/132 #101010 'Remove user tokens linked to unexistent project': success | time=7ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 31/132 #101011 'Populate 'project_key' in 'user_tokens''...
+2024.07.06 12:11:30 INFO  web[][o.s.s.p.d.m.s.MassUpdate] 0 rows processed (0 items/sec)
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 31/132 #101011 'Populate 'project_key' in 'user_tokens'': success | time=8ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 32/132 #101012 'Drop column 'project_key' in 'user_tokens'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 32/132 #101012 'Drop column 'project_key' in 'user_tokens': success | time=8ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 33/132 #101013 'Increase size of 'ce_queue.task_type' from 15 to 40 characters'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 33/132 #101013 'Increase size of 'ce_queue.task_type' from 15 to 40 characters': success | time=2ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 34/132 #101014 'Increase size of 'ce_activity.task_type' from 15 to 40 characters'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 34/132 #101014 'Increase size of 'ce_activity.task_type' from 15 to 40 characters': success | time=4ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 35/132 #101015 'Add 'external_groups' table.'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 35/132 #101015 'Add 'external_groups' table.': success | time=6ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 36/132 #101016 'Add index on 'external_groups(external_identity_provider, external_id).'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 36/132 #101016 'Add index on 'external_groups(external_identity_provider, external_id).': success | time=6ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 37/132 #101017 'Add 'code_variants' column in 'issues' table'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 37/132 #101017 'Add 'code_variants' column in 'issues' table': success | time=14ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 38/132 #101018 'Fix different uuids for subportfolios'...
+2024.07.06 12:11:30 INFO  web[][o.s.s.p.d.m.s.MassUpdate] 0 rows processed (0 items/sec)
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 38/132 #101018 'Fix different uuids for subportfolios': success | time=12ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 39/132 #101019 'Add report_schedules table'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 39/132 #101019 'Add report_schedules table': success | time=5ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 40/132 #101020 'Add report_subscriptions table'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 40/132 #101020 'Add report_subscriptions table': success | time=5ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 41/132 #101021 'Add report_schedules unique index'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 41/132 #101021 'Add report_schedules unique index': success | time=34ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 42/132 #101022 'Add report_subscriptions unique index'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 42/132 #101022 'Add report_subscriptions unique index': success | time=3ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 43/132 #101023 'Rename column 'component_uuid' to 'entity_uuid' in the 'properties' table'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 43/132 #101023 'Rename column 'component_uuid' to 'entity_uuid' in the 'properties' table': success | time=5ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 44/132 #101024 'Populate report_schedules table'...
+2024.07.06 12:11:30 INFO  web[][o.s.s.p.d.m.s.MassUpdate] 0 rows processed (0 items/sec)
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 44/132 #101024 'Populate report_schedules table': success | time=7ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 45/132 #101025 'Populate report_subscriptions table'...
+2024.07.06 12:11:30 INFO  web[][o.s.s.p.d.m.s.MassUpdate] 0 rows processed (0 items/sec)
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 45/132 #101025 'Populate report_subscriptions table': success | time=7ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 46/132 #101026 'Remove report properties'...
+2024.07.06 12:11:30 INFO  web[][o.s.s.p.d.m.s.MassUpdate] 0 rows processed (0 items/sec)
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 46/132 #101026 'Remove report properties': success | time=5ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 47/132 #102000 'Rename 'component_uuid' in 'user_roles' table to 'entity_uuid''...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 47/132 #102000 'Rename 'component_uuid' in 'user_roles' table to 'entity_uuid'': success | time=5ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 48/132 #102001 'Rename 'component_uuid' in 'group_roles' table to 'entity_uuid''...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 48/132 #102001 'Rename 'component_uuid' in 'group_roles' table to 'entity_uuid'': success | time=3ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 49/132 #102002 'Drop index 'group_roles_component_uuid' in 'group_roles''...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 49/132 #102002 'Drop index 'group_roles_component_uuid' in 'group_roles'': success | time=3ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 50/132 #102003 'Create index 'entity_uuid_user_roles' in 'group_roles' table'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 50/132 #102003 'Create index 'entity_uuid_user_roles' in 'group_roles' table': success | time=5ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 51/132 #102004 'Drop index 'user_roles_component_uuid' in 'user_roles' table'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 51/132 #102004 'Drop index 'user_roles_component_uuid' in 'user_roles' table': success | time=4ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 52/132 #102005 'Create index 'user_roles_entity_uuid' in 'user_roles''...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 52/132 #102005 'Create index 'user_roles_entity_uuid' in 'user_roles'': success | time=4ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 53/132 #102006 'Drop index 'ce_activity_component' in 'ce_activity''...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 53/132 #102006 'Drop index 'ce_activity_component' in 'ce_activity'': success | time=6ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 54/132 #102007 'Rename 'main_component_uuid' in 'ce_activity' table to 'entity_uuid''...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 54/132 #102007 'Rename 'main_component_uuid' in 'ce_activity' table to 'entity_uuid'': success | time=5ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 55/132 #102008 'Create index 'ce_activity_entity_uuid' in 'ce_activity' table''...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 55/132 #102008 'Create index 'ce_activity_entity_uuid' in 'ce_activity' table'': success | time=4ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 56/132 #102009 'Drop index 'ce_queue_main_component' in 'ce_queue' table'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 56/132 #102009 'Drop index 'ce_queue_main_component' in 'ce_queue' table': success | time=5ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 57/132 #102010 'Rename 'main_component_uuid' in 'ce_queue' table to 'entity_uuid''...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 57/132 #102010 'Rename 'main_component_uuid' in 'ce_queue' table to 'entity_uuid'': success | time=4ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 58/132 #102011 'Create index 'ce_queue_entity_uuid' in 'ce_queue' table'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 58/132 #102011 'Create index 'ce_queue_entity_uuid' in 'ce_queue' table': success | time=4ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 59/132 #102012 'Drop 'project_mappings' table'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 59/132 #102012 'Drop 'project_mappings' table': success | time=7ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 60/132 #102013 'Drop index on 'components.main_branch_project_uuid'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 60/132 #102013 'Drop index on 'components.main_branch_project_uuid': success | time=4ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 61/132 #102014 'Drop column 'main_branch_project_uuid' in the components table'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 61/132 #102014 'Drop column 'main_branch_project_uuid' in the components table': success | time=9ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 62/132 #102015 'Drop index 'component_uuid' in 'webhook_deliveries' table'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 62/132 #102015 'Drop index 'component_uuid' in 'webhook_deliveries' table': success | time=3ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 63/132 #102016 'Rename 'component_uuid' in 'webhook_deliveries' table to 'project_uuid''...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 63/132 #102016 'Rename 'component_uuid' in 'webhook_deliveries' table to 'project_uuid'': success | time=4ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 64/132 #102018 'Drop index 'component_uuid' in 'snapshots' table'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 64/132 #102018 'Drop index 'component_uuid' in 'snapshots' table': success | time=3ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 65/132 #102019 'Rename 'component_uuid' in 'snapshots' table to 'root_component_uuid''...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 65/132 #102019 'Rename 'component_uuid' in 'snapshots' table to 'root_component_uuid'': success | time=4ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 66/132 #102020 'Create index 'snapshots_root_component_uuid' in 'snapshots' table'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 66/132 #102020 'Create index 'snapshots_root_component_uuid' in 'snapshots' table': success | time=3ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 67/132 #102021 'Create 'purged' column in 'snapshots' table'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 67/132 #102021 'Create 'purged' column in 'snapshots' table': success | time=72ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 68/132 #102022 'Populate 'purged' column in 'snapshots' table'...
+2024.07.06 12:11:30 INFO  web[][o.s.s.p.d.m.s.MassUpdate] 0 rows processed (0 items/sec)
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 68/132 #102022 'Populate 'purged' column in 'snapshots' table': success | time=9ms
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 69/132 #102023 'Make 'purged' column not nullable in 'snapshots' table'...
+2024.07.06 12:11:30 INFO  web[][DbMigrations] 69/132 #102023 'Make 'purged' column not nullable in 'snapshots' table': success | time=9ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 70/132 #102024 'Drop 'purge_status' column in 'snapshots' table'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 70/132 #102024 'Drop 'purge_status' column in 'snapshots' table': success | time=7ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 71/132 #102025 'Rename 'build_date' in 'snapshots' table to 'analysis_date'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 71/132 #102025 'Rename 'build_date' in 'snapshots' table to 'analysis_date': success | time=5ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 72/132 #102030 'Create table 'anticipated_transitions''...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 72/132 #102030 'Create table 'anticipated_transitions'': success | time=4ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 73/132 #102031 'Increase size of 'ce_queue.is_last_key' from 55 to 80 characters'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 73/132 #102031 'Increase size of 'ce_queue.is_last_key' from 55 to 80 characters': success | time=3ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 74/132 #102032 'Increase size of 'ce_queue.main_is_last_key' from 55 to 80 characters'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 74/132 #102032 'Increase size of 'ce_queue.main_is_last_key' from 55 to 80 characters': success | time=2ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 75/132 #102033 'Add column 'clean_code_attribute' in 'rules' table'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 75/132 #102033 'Add column 'clean_code_attribute' in 'rules' table': success | time=7ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 76/132 #102034 'Populate 'clean_code_attribute' column in 'rules' table'...
+2024.07.06 12:11:31 INFO  web[][o.s.s.p.d.m.s.MassUpdate] 0 rows processed (0 items/sec)
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 76/132 #102034 'Populate 'clean_code_attribute' column in 'rules' table': success | time=7ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 77/132 #102036 'Create 'rules_default_impacts' table'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 77/132 #102036 'Create 'rules_default_impacts' table': success | time=4ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 78/132 #102037 'Create unique constraint index on 'rules_default_impacts' table'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 78/132 #102037 'Create unique constraint index on 'rules_default_impacts' table': success | time=4ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 79/132 #102038 'Create 'issues_impacts' table'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 79/132 #102038 'Create 'issues_impacts' table': success | time=6ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 80/132 #102039 'Create unique constraint index on 'issues_impacts' table'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 80/132 #102039 'Create unique constraint index on 'issues_impacts' table': success | time=3ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 81/132 #102040 'Populate default impacts for existing rules'...
+2024.07.06 12:11:31 INFO  web[][o.s.s.p.d.m.s.MassUpdate] 0 rows processed (0 items/sec)
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 81/132 #102040 'Populate default impacts for existing rules': success | time=9ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 82/132 #102041 'Fix sqale_index metric description in 'metrics' table'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 82/132 #102041 'Fix sqale_index metric description in 'metrics' table': success | time=4ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 83/132 #102042 'Create table 'github_orgs_groups''...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 83/132 #102042 'Create table 'github_orgs_groups'': success | time=4ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 84/132 #102043 'Create 'previous_non_compliant_value' in 'new_code_periods' table'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 84/132 #102043 'Create 'previous_non_compliant_value' in 'new_code_periods' table': success | time=8ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 85/132 #102044 'Update column 'value' and populate column 'previous_non_compliant_value' in 'new_code_periods' table'...
+2024.07.06 12:11:31 INFO  web[][o.s.s.p.d.m.s.MassUpdate] 0 rows processed (0 items/sec)
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 85/132 #102044 'Update column 'value' and populate column 'previous_non_compliant_value' in 'new_code_periods' table': success | time=8ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 86/132 #102045 'Alter 'project_uuid' in 'user_dismissed_messages' - make it nullable'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 86/132 #102045 'Alter 'project_uuid' in 'user_dismissed_messages' - make it nullable': success | time=3ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 87/132 #102046 'Create index 'project_branches_project_uuid' in 'project_branches' table'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 87/132 #102046 'Create index 'project_branches_project_uuid' in 'project_branches' table': success | time=4ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 88/132 #102047 'Drop index 'idx_wbhk_dlvrs_wbhk_uuid' in 'webhook_deliveries''...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 88/132 #102047 'Drop index 'idx_wbhk_dlvrs_wbhk_uuid' in 'webhook_deliveries'': success | time=5ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 89/132 #102048 'Create index 'wb_webhook_uuid_created_at' in 'webhook_deliveries''...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 89/132 #102048 'Create index 'wb_webhook_uuid_created_at' in 'webhook_deliveries'': success | time=4ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 90/132 #102049 'Drop index 'wd_project_uuid' in 'webhook_deliveries''...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 90/132 #102049 'Drop index 'wd_project_uuid' in 'webhook_deliveries'': success | time=2ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 91/132 #102050 'Create index 'wd_project_uuid_created_at' in 'webhook_deliveries''...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 91/132 #102050 'Create index 'wd_project_uuid_created_at' in 'webhook_deliveries'': success | time=5ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 92/132 #102051 'Drop index 'ce_task_uuid' in 'webhook_deliveries''...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 92/132 #102051 'Drop index 'ce_task_uuid' in 'webhook_deliveries'': success | time=4ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 93/132 #102052 'Create index 'wd_task_uuid_created_at' in 'webhook_deliveries''...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 93/132 #102052 'Create index 'wd_task_uuid_created_at' in 'webhook_deliveries'': success | time=4ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 94/132 #102053 'Create index 'wd_created_at' in 'webhook_deliveries''...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 94/132 #102053 'Create index 'wd_created_at' in 'webhook_deliveries'': success | time=6ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 95/132 #102054 'Insert property github.userConsentementForPermissionProvisioningRequired'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 95/132 #102054 'Insert property github.userConsentementForPermissionProvisioningRequired': success | time=5ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 96/132 #103000 'Set 'sonar.qualityProfiles.allowDisableInheritedRules' to false for upgraded instances'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 96/132 #103000 'Set 'sonar.qualityProfiles.allowDisableInheritedRules' to false for upgraded instances': success | time=5ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 97/132 #103001 'Add table 'github_perms_mapping''...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 97/132 #103001 'Add table 'github_perms_mapping'': success | time=5ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 98/132 #103002 'Create unique index on 'github_perms_mapping''...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 98/132 #103002 'Create unique index on 'github_perms_mapping'': success | time=3ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 99/132 #103003 'Add default mappings to 'github_perms_mapping''...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 99/132 #103003 'Add default mappings to 'github_perms_mapping'': success | time=14ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 100/132 #103004 'Add 'clean_code_attribute' column in 'issues' table'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 100/132 #103004 'Add 'clean_code_attribute' column in 'issues' table': success | time=9ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 101/132 #103005 'Add 'creation_method' column in 'projects' table'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 101/132 #103005 'Add 'creation_method' column in 'projects' table': success | time=6ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 102/132 #103006 'Populate 'creation_method' column in 'projects' table'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 102/132 #103006 'Populate 'creation_method' column in 'projects' table': success | time=4ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 103/132 #103007 'Make 'creation_method' column in 'projects' table non-nullable'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 103/132 #103007 'Make 'creation_method' column in 'projects' table non-nullable': success | time=6ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 104/132 #103008 'Add 'rule_changes_uuid' column in 'qprofile_changes''...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 104/132 #103008 'Add 'rule_changes_uuid' column in 'qprofile_changes'': success | time=4ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 105/132 #103009 'Create table 'rule_changes''...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 105/132 #103009 'Create table 'rule_changes'': success | time=5ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 106/132 #103010 'Create table 'rule_impact_changes''...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 106/132 #103010 'Create table 'rule_impact_changes'': success | time=2ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 107/132 #103011 'Create index for 'rule_impact_changes''...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 107/132 #103011 'Create index for 'rule_impact_changes'': success | time=3ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 108/132 #103012 'Add 'sq_version' column in 'qprofile_changes' table'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 108/132 #103012 'Add 'sq_version' column in 'qprofile_changes' table': success | time=5ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 109/132 #103013 'Deduplicate potential records in 'properties' table'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 109/132 #103013 'Deduplicate potential records in 'properties' table': success | time=9ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 110/132 #103014 'Create unique index to 'properties' table'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 110/132 #103014 'Create unique index to 'properties' table': success | time=3ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 111/132 #104000 'Delete redundant Failed Alerts for Applications'...
+2024.07.06 12:11:31 INFO  web[][o.s.s.p.d.m.s.MassUpdate] 0 rows processed (0 items/sec)
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 111/132 #104000 'Delete redundant Failed Alerts for Applications': success | time=7ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 112/132 #104001 'Rename metric 'wont_fix_issues' to 'accepted_issues''...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 112/132 #104001 'Rename metric 'wont_fix_issues' to 'accepted_issues'': success | time=4ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 113/132 #104002 'Create table 'rules_tags''...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 113/132 #104002 'Create table 'rules_tags'': success | time=4ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 114/132 #104003 'Populate 'rule_tags' table'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 114/132 #104003 'Populate 'rule_tags' table': success | time=9ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 115/132 #104004 'Drop column 'tags' in the 'rules' table'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 115/132 #104004 'Drop column 'tags' in the 'rules' table': success | time=9ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 116/132 #104005 'Drop column 'system_tags' in the 'rules' table'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 116/132 #104005 'Drop column 'system_tags' in the 'rules' table': success | time=7ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 117/132 #104006 'Add 'uuid' column to 'groups_users''...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 117/132 #104006 'Add 'uuid' column to 'groups_users'': success | time=5ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 118/132 #104007 'Populate 'uuid' column in 'groups_users''...
+2024.07.06 12:11:31 INFO  web[][o.s.s.p.d.m.s.MassUpdate] 2 rows processed (0 items/sec)
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 118/132 #104007 'Populate 'uuid' column in 'groups_users'': success | time=9ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 119/132 #104008 'Make 'uuid' column in 'groups_users' table non-nullable'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 119/132 #104008 'Make 'uuid' column in 'groups_users' table non-nullable': success | time=6ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 120/132 #104009 'Create primary key on 'groups_users.uuid''...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 120/132 #104009 'Create primary key on 'groups_users.uuid'': success | time=9ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 121/132 #104010 'Set nulls in 'clean_code_attribute' column of 'rules' table for security hotspots'...
+2024.07.06 12:11:31 INFO  web[][o.s.s.p.d.m.s.MassUpdate] 0 rows processed (0 items/sec)
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 121/132 #104010 'Set nulls in 'clean_code_attribute' column of 'rules' table for security hotspots': success | time=7ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 122/132 #104011 'Create 'issues_fixed' table'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 122/132 #104011 'Create 'issues_fixed' table': success | time=4ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 123/132 #105000 'Drop constraint on 'uuid' from 'issues_impacts' table'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 123/132 #105000 'Drop constraint on 'uuid' from 'issues_impacts' table': success | time=4ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 124/132 #105001 'Drop constraint on 'uuid' from 'rules_default_impacts' table'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 124/132 #105001 'Drop constraint on 'uuid' from 'rules_default_impacts' table': success | time=5ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 125/132 #105002 'Drop column 'uuid' from 'issues_impacts' table'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 125/132 #105002 'Drop column 'uuid' from 'issues_impacts' table': success | time=5ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 126/132 #105003 'Drop column 'uuid' from 'rules_default_impacts' table'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 126/132 #105003 'Drop column 'uuid' from 'rules_default_impacts' table': success | time=5ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 127/132 #105004 'Create primary key on 'issues_impacts' table'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 127/132 #105004 'Create primary key on 'issues_impacts' table': success | time=5ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 128/132 #105005 'Create primary key on 'rules_default_impacts' table'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 128/132 #105005 'Create primary key on 'rules_default_impacts' table': success | time=3ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 129/132 #105006 'Delete 'languageSpecificParameters' property set from 'properties' table'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 129/132 #105006 'Delete 'languageSpecificParameters' property set from 'properties' table': success | time=6ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 130/132 #106000 'Add 'prioritized_rule' column to 'issues' table'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 130/132 #106000 'Add 'prioritized_rule' column to 'issues' table': success | time=7ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 131/132 #106001 'Add 'prioritized_rule' column to 'active_rules' table'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 131/132 #106001 'Add 'prioritized_rule' column to 'active_rules' table': success | time=6ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 132/132 #106002 'Ensure 'value' column is resized to 400 in 'rule_tags' table'...
+2024.07.06 12:11:31 INFO  web[][DbMigrations] 132/132 #106002 'Ensure 'value' column is resized to 400 in 'rule_tags' table': success | time=5ms
+2024.07.06 12:11:31 INFO  web[][DbMigrations] Executed 132/132 DB migrations: success | time=1654ms
+2024.07.06 12:11:31 INFO  web[][o.s.s.p.Platform] Database has been automatically updated
+2024.07.06 12:11:31 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.platform.web.WebServiceFilter@538b3c88 [pattern=UrlPattern{inclusions=[/api/system/migrate_db.*, ...], exclusions=[/api/components/update_key, ...]}]
+2024.07.06 12:11:31 INFO  web[][o.s.s.p.DetectPluginChange] Detect plugin changes
+2024.07.06 12:11:33 INFO  web[][o.h.v.i.util.Version] HV000001: Hibernate Validator null
+2024.07.06 12:11:33 INFO  web[][o.s.s.e.IndexCreator] Create index [metadatas]
+2024.07.06 12:11:34 INFO  web[][o.s.s.e.IndexCreator] Create mapping metadatas
+2024.07.06 12:11:35 INFO  web[][o.s.s.e.IndexCreator] Create index [components]
+2024.07.06 12:11:40 INFO  web[][o.s.s.e.IndexCreator] Create mapping components
+2024.07.06 12:11:40 INFO  web[][o.s.s.e.IndexCreator] Create index [projectmeasures]
+2024.07.06 12:11:45 INFO  web[][o.s.s.e.IndexCreator] Create mapping projectmeasures
+2024.07.06 12:11:46 INFO  web[][o.s.s.e.IndexCreator] Create index [rules]
+2024.07.06 12:11:48 INFO  web[][o.s.s.e.IndexCreator] Create mapping rules
+2024.07.06 12:11:49 INFO  web[][o.s.s.e.IndexCreator] Create index [issues]
+2024.07.06 12:11:54 INFO  web[][o.s.s.e.IndexCreator] Create mapping issues
+2024.07.06 12:11:55 INFO  web[][o.s.s.e.IndexCreator] Create index [views]
+2024.07.06 12:12:00 INFO  web[][o.s.s.e.IndexCreator] Create mapping views
+2024.07.06 12:12:01 INFO  web[][o.s.s.s.LogServerId] Server ID: 147B411E-AZCI0J2g5V1YLeVWW69o
+2024.07.06 12:12:01 WARN  web[][o.s.s.a.LogOAuthWarning] For security reasons, OAuth authentication should use HTTPS. You should set the property 'Administration > Configuration > Server base URL' to an HTTPS URL.
+2024.07.06 12:12:01 INFO  web[][o.s.s.p.UpdateCenterClient] Update center: https://downloads.sonarsource.com/sonarqube/update/update-center.properties
+2024.07.06 12:12:02 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action saml/validation_init
+2024.07.06 12:12:02 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/system/liveness
+2024.07.06 12:12:02 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/plugins/download
+2024.07.06 12:12:02 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/analysis_cache/get
+2024.07.06 12:12:02 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/alm_integrations/check_pat
+2024.07.06 12:12:02 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/push/sonarlint_events
+2024.07.06 12:12:02 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/dismiss_message/check
+2024.07.06 12:12:02 INFO  web[][o.s.s.a.p.ExpiredSessionsCleaner] Purge of expired session tokens has removed 0 elements
+2024.07.06 12:12:02 INFO  web[][o.s.s.a.p.ExpiredSessionsCleaner] Purge of expired SAML message ids has removed 0 elements
+2024.07.06 12:12:02 INFO  web[][o.s.s.n.NotificationDaemon] Notification service started (delay 60 sec.)
+2024.07.06 12:12:02 INFO  web[][o.s.s.t.TelemetryDaemon] Sharing of SonarQube statistics is enabled.
+2024.07.06 12:12:03 INFO  web[][o.s.s.s.RegisterMetrics] Register metrics
+2024.07.06 12:12:03 INFO  web[][o.s.s.q.RegisterQualityGates] Built-in quality gate's conditions of [Sonar way] has been updated
+2024.07.06 12:12:03 INFO  web[][o.s.s.r.r.RulesRegistrant] Register rules
+2024.07.06 12:12:49 INFO  web[][o.s.s.q.b.BuiltInQProfileRepositoryImpl] Load quality profiles
+2024.07.06 12:12:49 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register quality profiles
+2024.07.06 12:12:49 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile kubernetes/Sonar way
+2024.07.06 12:12:50 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile css/Sonar way
+2024.07.06 12:12:50 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile scala/Sonar way
+2024.07.06 12:12:50 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile jsp/Sonar way
+2024.07.06 12:12:50 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile js/Sonar way
+2024.07.06 12:12:51 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile py/Sonar way
+2024.07.06 12:12:51 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile docker/Sonar way
+2024.07.06 12:12:51 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile java/Sonar way
+2024.07.06 12:12:52 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile web/Sonar way
+2024.07.06 12:12:52 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile xml/Sonar way
+2024.07.06 12:12:52 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile flex/Sonar way
+2024.07.06 12:12:53 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile json/Sonar way
+2024.07.06 12:12:53 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile text/Sonar way
+2024.07.06 12:12:53 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile vbnet/Sonar way
+2024.07.06 12:12:53 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile cloudformation/Sonar way
+2024.07.06 12:12:53 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile yaml/Sonar way
+2024.07.06 12:12:53 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile go/Sonar way
+2024.07.06 12:12:54 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile kotlin/Sonar way
+2024.07.06 12:12:54 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile secrets/Sonar way
+2024.07.06 12:12:54 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile ruby/Sonar way
+2024.07.06 12:12:54 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile cs/Sonar way
+2024.07.06 12:12:55 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile php/Sonar way
+2024.07.06 12:12:55 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile terraform/Sonar way
+2024.07.06 12:12:55 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile azureresourcemanager/Sonar way
+2024.07.06 12:12:56 INFO  web[][o.s.s.q.RegisterQualityProfiles] Register profile ts/Sonar way
+2024.07.06 12:12:56 INFO  web[][o.s.s.s.RegisterPermissionTemplates] Register permission templates
+2024.07.06 12:12:56 INFO  web[][o.s.s.s.RenameDeprecatedPropertyKeys] Rename deprecated property keys
+2024.07.06 12:12:56 INFO  web[][o.s.s.s.RegisterPlugins] Register plugins
+2024.07.06 12:12:56 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.platform.web.SonarLintConnectionFilter@4dcae62c [pattern=UrlPattern{inclusions=[/api/*], exclusions=[/api/v2/*]}]
+2024.07.06 12:12:56 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.platform.web.WebServiceFilter@710f063a [pattern=UrlPattern{inclusions=[/api/issues/delete_comment.*, ...], exclusions=[/api/authentication/login.*, ...]}]
+2024.07.06 12:12:56 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.platform.web.WebServiceReroutingFilter@8f0dc3a [pattern=UrlPattern{inclusions=[/api/components/update_key, ...], exclusions=[]}]
+2024.07.06 12:12:56 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.DefaultAdminCredentialsVerifierFilter@6880858f [pattern=UrlPattern{inclusions=[/*], exclusions=[*.css, ...]}]
+2024.07.06 12:12:56 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.InitFilter@72e1f535 [pattern=UrlPattern{inclusions=[/sessions/init/*], exclusions=[]}]
+2024.07.06 12:12:56 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.SamlValidationRedirectionFilter@7b560385 [pattern=UrlPattern{inclusions=[/oauth2/callback/saml], exclusions=[]}]
+2024.07.06 12:12:56 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.OAuth2CallbackFilter@754911d9 [pattern=UrlPattern{inclusions=[/oauth2/callback/*], exclusions=[]}]
+2024.07.06 12:12:56 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ResetPasswordFilter@19894e02 [pattern=UrlPattern{inclusions=[/*], exclusions=[*.css, ...]}]
+2024.07.06 12:12:56 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.LoginAction@5744405 [pattern=UrlPattern{inclusions=[/api/authentication/login], exclusions=[]}]
+2024.07.06 12:12:56 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.LogoutAction@3126cd4f [pattern=UrlPattern{inclusions=[/api/authentication/logout], exclusions=[]}]
+2024.07.06 12:12:56 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.ValidateAction@20c4f425 [pattern=UrlPattern{inclusions=[/api/authentication/validate], exclusions=[]}]
+2024.07.06 12:12:56 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.saml.ws.ValidationInitAction@6c8ca786 [pattern=UrlPattern{inclusions=[/saml/validation_init], exclusions=[]}]
+2024.07.06 12:12:56 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.saml.ws.ValidationAction@6bc743ed [pattern=UrlPattern{inclusions=[/saml/validation], exclusions=[]}]
+2024.07.06 12:12:56 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.user.ws.ChangePasswordAction@643c585b [pattern=UrlPattern{inclusions=[/api/users/change_password], exclusions=[]}]
+2024.07.06 12:12:56 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.plugins.PluginsRiskConsentFilter@2fbd2572 [pattern=UrlPattern{inclusions=[/*], exclusions=[*.css, ...]}]
+2024.07.06 12:12:56 INFO  web[][o.s.s.e.IndexerStartupTask] Indexing of type [projectmeasures/auth/projectmeasure]...
+2024.07.06 12:12:57 INFO  web[][o.s.s.e.IndexerStartupTask] Indexing of type [projectmeasures/auth/projectmeasure] done | time=595ms
+2024.07.06 12:12:57 INFO  web[][o.s.s.e.IndexerStartupTask] Indexing of type [components/auth/component]...
+2024.07.06 12:12:57 INFO  web[][o.s.s.e.IndexerStartupTask] Indexing of type [components/auth/component] done | time=554ms
+2024.07.06 12:12:57 INFO  web[][o.s.s.e.IndexerStartupTask] Indexing of type [views/view]...
+2024.07.06 12:12:59 INFO  web[][o.s.s.e.IndexerStartupTask] Indexing of type [views/view] done | time=2101ms
+2024.07.06 12:12:59 INFO  web[][o.s.s.e.IndexerStartupTask] Trigger asynchronous indexing of type [issues/auth/issue]...
+2024.07.06 12:12:59 INFO  web[][o.s.s.i.i.AsyncIssueIndexingImpl] 0 pending indexing task found to be deleted...
+2024.07.06 12:12:59 INFO  web[][o.s.s.i.i.AsyncIssueIndexingImpl] 0 completed indexing task found to be deleted...
+2024.07.06 12:12:59 INFO  web[][o.s.s.i.i.AsyncIssueIndexingImpl] Indexing task deletion complete.
+2024.07.06 12:12:59 INFO  web[][o.s.s.i.i.AsyncIssueIndexingImpl] Deleting tasks characteristics...
+2024.07.06 12:12:59 INFO  web[][o.s.s.i.i.AsyncIssueIndexingImpl] Tasks characteristics deletion complete.
+2024.07.06 12:12:59 INFO  web[][o.s.s.i.i.AsyncIssueIndexingImpl] 0 branch found in need of issue sync.
+2024.07.06 12:13:00 INFO  web[][o.s.s.e.IndexerStartupTask] Trigger asynchronous indexing of type [issues/auth/issue] done | time=145ms
+2024.07.06 12:13:00 INFO  web[][o.s.s.e.IndexerStartupTask] Indexing of types [components/auth],[projectmeasures/auth],[issues/auth]...
+2024.07.06 12:13:00 INFO  web[][o.s.s.e.IndexerStartupTask] Indexing of types [components/auth],[projectmeasures/auth],[issues/auth] done | time=395ms
+2024.07.06 12:13:00 INFO  web[][o.s.s.p.p.PlatformLevelStartup] Running Community Edition
+2024.07.06 12:13:01 INFO  web[][o.s.s.p.Platform] Web Server is operational
+2024.07.06 13:18:32 INFO  web[][o.s.p.ProcessEntryPoint] Gracefully stopping process
+2024.07.06 13:18:32 INFO  web[][o.s.s.n.NotificationDaemon] Notification service stopped
+2024.07.06 13:18:32 INFO  web[][c.z.h.HikariDataSource] HikariPool-1 - Shutdown initiated...
+2024.07.06 13:18:32 INFO  web[][c.z.h.HikariDataSource] HikariPool-1 - Shutdown completed.
+2024.07.06 13:18:32 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Embedded database stopped
+2024.07.06 13:18:33 INFO  web[][o.s.s.app.WebServer] Web Server stopped
+2024.07.06 13:29:53 INFO  web[][o.s.p.ProcessEntryPoint] Starting Web Server
+2024.07.06 13:29:53 INFO  web[][o.s.s.a.TomcatHttpConnectorFactory] Starting Tomcat on port 9000
+2024.07.06 13:29:54 INFO  web[][o.s.s.p.LogServerVersion] SonarQube Server / 10.6.0.92116 / 832b6f0491b9d7775943b0e7fcc09ef936d23007
+2024.07.06 13:29:54 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Starting embedded database on port 9092 with url jdbc:h2:tcp://127.0.0.1:9092/sonar;NON_KEYWORDS=VALUE
+2024.07.06 13:29:54 INFO  web[][o.s.s.p.d.EmbeddedDatabase] Embedded database started. Data stored in: /Users/sam/Desktop/TS8/sonarqube-10.6.0.92116/data
+2024.07.06 13:29:54 INFO  web[][o.s.d.DefaultDatabase] Create JDBC data source for jdbc:h2:tcp://127.0.0.1:9092/sonar;NON_KEYWORDS=VALUE
+2024.07.06 13:29:54 INFO  web[][c.z.h.HikariDataSource] HikariPool-1 - Starting...
+2024.07.06 13:29:54 INFO  web[][c.z.h.p.HikariPool] HikariPool-1 - Added connection conn2: url=jdbc:h2:tcp://127.0.0.1:9092/sonar user=
+2024.07.06 13:29:54 INFO  web[][c.z.h.HikariDataSource] HikariPool-1 - Start completed.
+2024.07.06 13:29:54 WARN  web[][o.s.db.dialect.H2] H2 database should be used for evaluation purpose only.
+2024.07.06 13:29:55 INFO  web[][o.s.s.p.ServerFileSystemImpl] SonarQube home: /Users/sam/Desktop/TS8/sonarqube-10.6.0.92116
+2024.07.06 13:29:55 INFO  web[][o.s.s.u.SystemPasscodeImpl] System authentication by passcode is disabled
+2024.07.06 13:29:56 INFO  web[][o.s.s.p.ServerPluginManager] Deploy C# Code Quality and Security / 9.27.0.93347 / f6dd2dc674ed47c3c3b2d54f0dbb1f1e2010ac73
+2024.07.06 13:29:56 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Clean as You Code / 2.3.0.1782 / 1db4e32c08cf9d0b999498e7ba4fd5849583dfdd
+2024.07.06 13:29:56 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Flex Code Quality and Security / 2.12.0.4568 / e8b2821a05db57b79b8ae85e3db1571f5b744273
+2024.07.06 13:29:56 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Go Code Quality and Security / 1.15.0.4655 / 28938525c4093d5e9fa4e858535bbcb60af7f066
+2024.07.06 13:29:56 INFO  web[][o.s.s.p.ServerPluginManager] Deploy HTML Code Quality and Security / 3.16.0.5274 / 423029a90fcbbd65b86d3b4e9c3e4bc686449a75
+2024.07.06 13:29:56 INFO  web[][o.s.s.p.ServerPluginManager] Deploy IaC Code Quality and Security / 1.31.0.10579 / null
+2024.07.06 13:29:56 INFO  web[][o.s.s.p.ServerPluginManager] Deploy JaCoCo / 1.3.0.1538 / 74a7798c7cea687c72ed9df40c93eb7ea2a58c49
+2024.07.06 13:29:56 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Java Advanced Code Quality Analyzer / 8.0.1.36337 / 06cf4ed6298da3ae634677c5eff8bba46f2498a5
+2024.07.06 13:29:56 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Java Code Quality and Security / 8.0.1.36337 / 06cf4ed6298da3ae634677c5eff8bba46f2498a5
+2024.07.06 13:29:56 INFO  web[][o.s.s.p.ServerPluginManager] Deploy JavaScript/TypeScript/CSS Code Quality and Security / 10.14.0.26080 / 1ac0884e4f4afdd4a46add2f1208ee832dc43c87
+2024.07.06 13:29:56 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Kotlin Code Quality and Security / 2.20.0.4382 / eb22cc4ed915de84e358135dd3f2ea2080de1441
+2024.07.06 13:29:56 INFO  web[][o.s.s.p.ServerPluginManager] Deploy PHP Code Quality and Security / 3.36.0.11813 / 5b885f10c336e98e29f269308a4975487b7bdb3b
+2024.07.06 13:29:56 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Python Code Quality and Security / 4.19.0.15616 / b456a29c1c3b9af03aa6262b6f8264e5a12d019f
+2024.07.06 13:29:56 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Ruby Code Quality and Security / 1.15.0.4655 / 28938525c4093d5e9fa4e858535bbcb60af7f066
+2024.07.06 13:29:56 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Scala Code Quality and Security / 1.15.0.4655 / 28938525c4093d5e9fa4e858535bbcb60af7f066
+2024.07.06 13:29:56 INFO  web[][o.s.s.p.ServerPluginManager] Deploy Text Code Quality and Security / 2.12.1.2905 / null
+2024.07.06 13:29:56 INFO  web[][o.s.s.p.ServerPluginManager] Deploy VB.NET Code Quality and Security / 9.27.0.93347 / f6dd2dc674ed47c3c3b2d54f0dbb1f1e2010ac73
+2024.07.06 13:29:56 INFO  web[][o.s.s.p.ServerPluginManager] Deploy XML Code Quality and Security / 2.10.0.4108 / 34b16ba369117f6befc0b1e0866a069a80f6db2e
+2024.07.06 13:29:57 INFO  web[][o.s.s.e.EsClientProvider] Connected to local Elasticsearch: [http://localhost:9001]
+2024.07.06 13:29:58 WARN  web[][o.s.a.s.w.WebService$Action] Description is not set on action api/monitoring/metrics
+2024.07.06 13:29:58 WARN  web[][o.s.a.s.w.WebService$Action] Since is not set on action api/monitoring/metrics
+2024.07.06 13:29:58 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/monitoring/metrics
+2024.07.06 13:29:58 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/system/liveness
+2024.07.06 13:29:58 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.platform.web.WebServiceFilter@537b3b2e [pattern=UrlPattern{inclusions=[/api/system/migrate_db.*, ...], exclusions=[/api/components/update_key, ...]}]
+2024.07.06 13:29:58 INFO  web[][o.s.s.p.DetectPluginChange] Detect plugin changes
+2024.07.06 13:29:58 INFO  web[][o.s.s.p.DetectPluginChange] No plugin change detected
+2024.07.06 13:29:59 INFO  web[][o.h.v.i.util.Version] HV000001: Hibernate Validator null
+2024.07.06 13:30:00 INFO  web[][o.s.s.s.LogServerId] Server ID: 147B411E-AZCI0J2g5V1YLeVWW69o
+2024.07.06 13:30:00 WARN  web[][o.s.s.a.LogOAuthWarning] For security reasons, OAuth authentication should use HTTPS. You should set the property 'Administration > Configuration > Server base URL' to an HTTPS URL.
+2024.07.06 13:30:00 INFO  web[][o.s.s.p.UpdateCenterClient] Update center: https://downloads.sonarsource.com/sonarqube/update/update-center.properties
+2024.07.06 13:30:01 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action saml/validation_init
+2024.07.06 13:30:01 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/system/liveness
+2024.07.06 13:30:01 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/plugins/download
+2024.07.06 13:30:01 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/analysis_cache/get
+2024.07.06 13:30:01 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/alm_integrations/check_pat
+2024.07.06 13:30:01 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/push/sonarlint_events
+2024.07.06 13:30:01 WARN  web[][o.s.a.s.w.WebService$Action] The response example is not set on action api/dismiss_message/check
+2024.07.06 13:30:01 INFO  web[][o.s.s.a.p.ExpiredSessionsCleaner] Purge of expired session tokens has removed 0 elements
+2024.07.06 13:30:01 INFO  web[][o.s.s.a.p.ExpiredSessionsCleaner] Purge of expired SAML message ids has removed 0 elements
+2024.07.06 13:30:01 INFO  web[][o.s.s.n.NotificationDaemon] Notification service started (delay 60 sec.)
+2024.07.06 13:30:01 INFO  web[][o.s.s.t.TelemetryDaemon] Sharing of SonarQube statistics is enabled.
+2024.07.06 13:30:02 INFO  web[][o.s.s.s.RegisterPermissionTemplates] Register permission templates
+2024.07.06 13:30:02 INFO  web[][o.s.s.s.RenameDeprecatedPropertyKeys] Rename deprecated property keys
+2024.07.06 13:30:02 INFO  web[][o.s.s.s.RegisterPlugins] Register plugins
+2024.07.06 13:30:02 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.platform.web.SonarLintConnectionFilter@8a14027 [pattern=UrlPattern{inclusions=[/api/*], exclusions=[/api/v2/*]}]
+2024.07.06 13:30:02 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.platform.web.WebServiceFilter@f178602 [pattern=UrlPattern{inclusions=[/api/issues/delete_comment.*, ...], exclusions=[/api/authentication/login.*, ...]}]
+2024.07.06 13:30:02 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.platform.web.WebServiceReroutingFilter@3ef14153 [pattern=UrlPattern{inclusions=[/api/components/update_key, ...], exclusions=[]}]
+2024.07.06 13:30:02 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.DefaultAdminCredentialsVerifierFilter@bd59936 [pattern=UrlPattern{inclusions=[/*], exclusions=[*.css, ...]}]
+2024.07.06 13:30:02 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.InitFilter@9775013 [pattern=UrlPattern{inclusions=[/sessions/init/*], exclusions=[]}]
+2024.07.06 13:30:02 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.SamlValidationRedirectionFilter@3ae3f0a9 [pattern=UrlPattern{inclusions=[/oauth2/callback/saml], exclusions=[]}]
+2024.07.06 13:30:02 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.OAuth2CallbackFilter@e2cd57f [pattern=UrlPattern{inclusions=[/oauth2/callback/*], exclusions=[]}]
+2024.07.06 13:30:02 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ResetPasswordFilter@2917e1a5 [pattern=UrlPattern{inclusions=[/*], exclusions=[*.css, ...]}]
+2024.07.06 13:30:02 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.LoginAction@199977b6 [pattern=UrlPattern{inclusions=[/api/authentication/login], exclusions=[]}]
+2024.07.06 13:30:02 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.LogoutAction@1e114e58 [pattern=UrlPattern{inclusions=[/api/authentication/logout], exclusions=[]}]
+2024.07.06 13:30:02 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.authentication.ws.ValidateAction@ee2eac1 [pattern=UrlPattern{inclusions=[/api/authentication/validate], exclusions=[]}]
+2024.07.06 13:30:02 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.saml.ws.ValidationInitAction@29063635 [pattern=UrlPattern{inclusions=[/saml/validation_init], exclusions=[]}]
+2024.07.06 13:30:02 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.saml.ws.ValidationAction@3d71dec3 [pattern=UrlPattern{inclusions=[/saml/validation], exclusions=[]}]
+2024.07.06 13:30:02 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.user.ws.ChangePasswordAction@1ad3db5c [pattern=UrlPattern{inclusions=[/api/users/change_password], exclusions=[]}]
+2024.07.06 13:30:02 INFO  web[][o.s.s.p.w.MasterServletFilter] Initializing servlet filter org.sonar.server.plugins.PluginsRiskConsentFilter@3f900617 [pattern=UrlPattern{inclusions=[/*], exclusions=[*.css, ...]}]
+2024.07.06 13:30:02 INFO  web[][o.s.s.p.p.PlatformLevelStartup] Running Community Edition
+2024.07.06 13:30:02 INFO  web[][o.s.s.p.Platform] Web Server is operational
+2024.07.06 13:53:02 WARN  web[][c.z.h.p.HikariPool] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m53s447ms).
+2024.07.06 14:06:08 WARN  web[][c.z.h.p.HikariPool] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=13m6s880ms).
+2024.07.06 14:19:32 WARN  web[][c.z.h.p.HikariPool] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=53s616ms).
+2024.07.06 14:35:56 WARN  web[][c.z.h.p.HikariPool] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m53s437ms).
+2024.07.06 14:52:19 WARN  web[][c.z.h.p.HikariPool] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m53s589ms).
+2024.07.06 15:08:13 WARN  web[][c.z.h.p.HikariPool] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m53s545ms).
+2024.07.06 15:24:36 WARN  web[][c.z.h.p.HikariPool] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m53s668ms).
+2024.07.06 15:37:06 WARN  web[][c.z.h.p.HikariPool] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11m59s585ms).
+2024.07.06 15:57:04 WARN  web[][c.z.h.p.HikariPool] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m28s214ms).
+2024.07.06 16:16:58 WARN  web[][c.z.h.p.HikariPool] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m53s577ms).
+2024.07.06 16:25:19 WARN  web[][c.z.h.p.HikariPool] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m51s83ms).
+2024.07.06 16:27:00 WARN  web[][c.z.h.p.HikariPool] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m40s816ms).
+2024.07.06 16:27:53 WARN  web[][c.z.h.p.HikariPool] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=53s604ms).
+2024.07.06 16:48:04 WARN  web[][c.z.h.p.HikariPool] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=20m10s868ms).
+2024.07.06 17:04:21 WARN  web[][c.z.h.p.HikariPool] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m17s148ms).
+2024.07.06 17:19:20 WARN  web[][c.z.h.p.HikariPool] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=14m58s471ms).
