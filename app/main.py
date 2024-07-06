@@ -152,6 +152,14 @@ def extract_data_from_submission(submission, process_function):
     cleaned_json = validate_and_clean_json(sanitized_info)
     logging.info(f"validate_and_clean_json returned: {cleaned_json}")
 
+    logging.info(f"Type of cleaned_json: {type(cleaned_json)}")
+    if isinstance(cleaned_json, list):
+        logging.info("cleaned_json is a list.")
+    elif isinstance(cleaned_json, dict):
+        logging.info("cleaned_json is a dictionary.")
+    else:
+        logging.warning("cleaned_json is neither a list nor a dictionary.")
+
     logging.info("Successfully extracted and processed candidate information")
     return cleaned_json
 
@@ -355,7 +363,15 @@ def process_candidate_profile(submission_text):
     try:
         logging.debug(f"Submission text received: {submission_text[:100]}...")
         logging.info("Extracting data from submission")
-        extracted_info_list = extract_data_from_submission(submission_text)
+        extracted_info_list = extract_data_from_submission(submission_text, process_candidate_profile)
+        logging.info(f"Type of extracted_info_list: {type(extracted_info_list)}")
+        if isinstance(extracted_info_list, list):
+            logging.info("extracted_info_list is a list.")
+        elif isinstance(extracted_info_list, dict):
+            logging.info("extracted_info_list is a dictionary.")
+        else:
+            logging.warning("extracted_info_list is neither a list nor a dictionary.")
+
         if not extracted_info_list:
             logging.warning("No data extracted from submission")
             return None
