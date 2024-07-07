@@ -29,6 +29,20 @@ jobs:
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
+    # SonarQube Scan
+    - name: SonarQube Scan
+      uses: sonarsource/sonarqube-scan-action@master
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+
+    # Optionally, fail the job if the Quality Gate fails
+    # - name: SonarQube Quality Gate Check
+    #   uses: sonarsource/sonarqube-quality-gate-action@master
+    #   timeout-minutes: 5
+    #   env:
+    #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
     - name: Use OpenAI Matching Token
       env:
         GH_TOKEN: ${{ secrets.OPEN_AIMATCHING }}
