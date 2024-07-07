@@ -36,6 +36,8 @@ jobs:
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+      with:
+        args: -X  # Enable debug logging for SonarScanner
 
     # Optionally, fail the job if the Quality Gate fails
     # - name: SonarQube Quality Gate Check
