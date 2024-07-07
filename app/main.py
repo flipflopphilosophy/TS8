@@ -117,20 +117,6 @@ def fetch_existing_ids():
             conn.close()
     return existing_ids
 
-def process_submissions(submission_text, process_function, submission_type):
-    submissions = submission_text.split('#DF')
-    extracted_data = []
-
-    # Fetch existing IDs from the database
-    existing_ids = fetch_existing_ids()
-
-    for submission in submissions:
-        try:
-            pass
-        except Exception as e:
-            pass
-    return extracted_data
-
 def extract_data_from_submission(submission, process_function):
     logging.info("Starting extract_data_from_submission")
     prompt = generate_prompt(submission, process_function)
