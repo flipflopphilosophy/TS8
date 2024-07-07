@@ -26,6 +26,32 @@ client = OpenAI.Client(api_key=OPENAI_API_KEY)
 # Constants
 DATABASE_NAME = 'job_candidate_manager.db'
 
+def handle_job_post(submission_text):
+    extracted_info = extract_info('jobPost', submission_text)
+    if extracted_info:
+        save_job_posts_to_db(extracted_info)
+    return extracted_info
+
+def handle_old_job(submission_text):
+    extracted_info = extract_info('oldJob', submission_text)
+    if extracted_info:
+        save_job_posts_to_db(extracted_info)
+    return extracted_info
+
+def handle_candidate_profile(submission_text):
+    extracted_info = extract_info('candidateProfile', submission_text)
+    if isinstance(extracted_info, list):
+        print("extracted_info is a list.")
+    elif isinstance(extracted_info, dict):
+        print("extracted_info is a dictionary.")
+    else:
+        print("extracted_info is neither a list nor a dictionary.")
+    if extracted_info:
+        save_candidate_profiles_to_db(extracted_info)
+    return extracted_info
+
+
+
 def answer_question(question):
     response = client.Completion.create(
       engine="gpt-4o",  # Updated to use GPT-4o engine
@@ -460,55 +486,35 @@ def debug_data():
 @main.route('/submit', methods=['POST'])
 def submit():
     logger.info("Submit data endpoint hit")
-    
     try:
         data = request.get_json()
         logger.info("Received data: %s", data)
-
         submission_type = data.get('type')
         submission_text = data.get('text')
-
-        if submission_type == 'job':
-            submission_type = 'jobPost'
-        elif submission_type == 'candidate':
-            submission_type = 'candidateProfile'
 
         if not submission_text:
             logger.error("No text provided")
             return jsonify({"error": "No text provided"}), 400
 
         extracted_info = None
+        if submission_type == 'job':
+            extracted_info = handle_job_post(submission_text)
+        elif submission_type == 'oldJob':
+            extracted_info = handle_old_job(submission_text)
+        elif submission_type == 'candidate':
+            extracted_info = handle_candidate_profile(submission_text)
+        else:
+            logger.error("Invalid submission type: %s", submission_type)
+            return jsonify({"error": "Invalid submission type"}), 400
 
-        try:
-            if submission_type == 'jobPost':
-                extracted_info = extract_info('jobPost', submission_text)
-                if extracted_info:
-                    save_job_posts_to_db(extracted_info)
-            elif submission_type == 'oldJob':
-                extracted_info = extract_info('oldJob', submission_text)
-                if extracted_info:
-                    save_job_posts_to_db(extracted_info)
-            elif submission_type == 'candidateProfile':
-                extracted_info = extract_info('candidateProfile', submission_text)
-                print(f"Type of extracted_info: {type(extracted_info)}")  # Add this line
-                if isinstance(extracted_info, list):
-                    print("extracted_info is a list.")
-                elif isinstance(extracted_info, dict):
-                    print("extracted_info is a dictionary.")
-                else:
-                    print("extracted_info is neither a list nor a dictionary.")
-                if extracted_info:
-                    save_candidate_profiles_to_db(extracted_info)
-            else:
-                logger.error("Invalid submission type: %s", submission_type)
-                return jsonify({"error": "Invalid submission type"}), 400
+        if extracted_info is None:
+            logger.error("No information extracted")
+            return jsonify({"error": "Failed to process submission"}), 400
 
-            logger.info("Submission processed successfully")
-            return jsonify({"status": "success", "data": extracted_info}), 200
-        except Exception as e:
-            logger.exception("Exception during extraction and saving")
-            return jsonify({"error": "An error occurred during submission processing"}), 500
-    except Exception as e:
+        logger.info("Submission processed successfully")
+        return jsonify({"status": "success", "data": extracted_info}), 200
+
+    except Exception:
         logger.exception("Exception during request handling")
         return jsonify({"error": "Internal server error"}), 500
 
@@ -569,7 +575,7 @@ def filtered_job_posts():
     end_date = data.get('end_date')
     category = data.get('category')
 
-    conn = sqlite3.connect('job_candidate_manager.db')
+    conn = sqlite3.connect(DATABASE_NAME)
     cursor = conn.cursor()
 
     query = "SELECT * FROM job_posts WHERE date_job_tracked BETWEEN ? AND ?"
