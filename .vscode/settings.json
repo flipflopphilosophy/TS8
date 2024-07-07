@@ -1,0 +1,6 @@
+{
+    "sonarlint.connectedMode.project": {
+        "connectionId": "http://localhost:9000",
+        "projectKey": "flipflopphilosophy_TS8_899f783f-3c21-43e8-9010-3256da07dbc7"
+    }
+}

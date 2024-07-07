@@ -23,6 +23,9 @@ OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 # Instantiate the OpenAI client at the module level
 client = OpenAI.Client(api_key=OPENAI_API_KEY)
 
+# Constants
+DATABASE_NAME = 'job_candidate_manager.db'
+
 def answer_question(question):
     response = client.Completion.create(
       engine="gpt-4o",  # Updated to use GPT-4o engine
@@ -73,12 +76,11 @@ def extract_info(submission_type, submission_text):
 
     return extracted_data
 
-# Function to fetch all existing IDs from the database
 def fetch_existing_ids():
     conn = None
     cursor = None
     try:
-        conn = sqlite3.connect('job_candidate_manager.db', timeout=10)
+        conn = sqlite3.connect(DATABASE_NAME, timeout=10)
         cursor = conn.cursor()
         cursor.execute("SELECT id FROM candidate_profiles")
         existing_ids = {row[0] for row in cursor.fetchall()}
@@ -434,7 +436,7 @@ def index():
 
 @main.route('/schema', methods=['GET'])
 def schema():
-    conn = sqlite3.connect('job_candidate_manager.db')
+    conn = sqlite3.connect(DATABASE_NAME)
     cursor = conn.cursor()
 
     cursor.execute("PRAGMA table_info(job_posts)")
@@ -512,7 +514,7 @@ def submit():
 
 @main.route('/job_posts', methods=['GET'])
 def job_posts():
-    conn = sqlite3.connect('job_candidate_manager.db')
+    conn = sqlite3.connect(DATABASE_NAME)
     cursor = conn.cursor()
 
     cursor.execute("SELECT * FROM job_posts")
@@ -524,7 +526,7 @@ def job_posts():
 
 @main.route('/candidate_profiles', methods=['GET'])
 def candidate_profiles():
-    conn = sqlite3.connect('job_candidate_manager.db')
+    conn = sqlite3.connect(DATABASE_NAME)
     cursor = conn.cursor()
 
     cursor.execute("SELECT * FROM candidate_profiles")
@@ -536,7 +538,7 @@ def candidate_profiles():
 
 @main.route('/dashboard/job_posts')
 def job_posts_dashboard():
-    conn = sqlite3.connect('job_candidate_manager.db')
+    conn = sqlite3.connect(DATABASE_NAME)
     cursor = conn.cursor()
 
     cursor.execute("SELECT * FROM job_posts")
@@ -549,7 +551,7 @@ def job_posts_dashboard():
 @main.route('/dashboard/candidate_profiles')
 def candidate_profiles_dashboard():
     logger.info("Fetching candidate profiles from database.")
-    conn = sqlite3.connect('job_candidate_manager.db')
+    conn = sqlite3.connect(DATABASE_NAME)
     cursor = conn.cursor()
 
     cursor.execute("SELECT * FROM candidate_profiles")
@@ -586,7 +588,7 @@ def filtered_job_posts():
     return jsonify(filtered_posts)
 
 def save_job_posts_to_db(job_posts):
-    conn = sqlite3.connect('job_candidate_manager.db')
+    conn = sqlite3.connect(DATABASE_NAME)
     cursor = conn.cursor()
 
     for job in job_posts:
@@ -666,7 +668,7 @@ def save_candidate_profiles_to_db(candidate_profiles):
     cursor = None
 
     try:
-        conn = sqlite3.connect('job_candidate_manager.db', timeout=10)
+        conn = sqlite3.connect(DATABASE_NAME, timeout=10)
         cursor = conn.cursor()
 
         for candidate_dict in candidate_profiles:
