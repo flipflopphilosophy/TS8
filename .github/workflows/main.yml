@@ -7,11 +7,11 @@ on:
     branches: [ master ]
 
 jobs:
-  build-and-notify:
+  name: Build and analyze
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
     - name: Set up Python
       uses: actions/setup-python@v2
@@ -35,8 +35,6 @@ jobs:
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-      with:
-        args: -X  # Enable debug logging for SonarScanner
 
     # Optionally, fail the job if the Quality Gate fails
     # - name: SonarQube Quality Gate Check
